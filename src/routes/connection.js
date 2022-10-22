@@ -3,7 +3,7 @@ const router = express.Router();
 const axios = require("axios");
 const QRCode = require("qrcode");
 
-router.post("/invitation", async (req, res) => {
+router.get("/invitation", async (req, res) => {
   try {
     const { data: response } = await axios.post(
       "http://127.0.0.0:8021/connections/create-invitation",
@@ -39,5 +39,23 @@ router.get("/list", async (req, res) => {
     res.status(statusCode).send({ message: error });
   }
 });
+
+router.post("/:conn_id/send-message",async(req,res)=>{
+  try {
+    const {content} = req.body
+    const { data: response } = await axios.post(
+      `http://127.0.0.0:8021/connections/${req.params.conn_id}/send-message`,
+      {
+        content
+      }
+    );
+    res.status(200).send(response);
+
+  } catch (e) {
+    const error = e.messsage;
+    const statusCode = e.statusCode;
+    res.status(statusCode).send({ message: error });
+  }
+})
 
 module.exports = router;

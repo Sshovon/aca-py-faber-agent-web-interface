@@ -11,7 +11,7 @@ https://github.com/hyperledger/aries-cloudagent-python.git
 ```
 
 
-## Hyperledger aries-mobile-agent-react-native 
+## Hyperledger Aries-mobile-agent-react-native 
 
 You have to clone following repository and follow the other instructions in the repository to complete the setup. And it will install a mobile agent in your mobile to manage your identity.
 

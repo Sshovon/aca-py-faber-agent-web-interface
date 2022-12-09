@@ -55,3 +55,19 @@ npm start
 ```
 
 ### Now you can use the functionalities provied by aries cloud agent using the web-interface
+
+
+<!-- ### setup ngrok for two port
+
+```ngrok start --all ```
+
+### now set 3001 port to webhook and 8020 to aca-py in agent.py and faber-local.sh in demo folder
+
+
+# start api and front-end
+
+
+# start aca-py 
+``` LEDGER_URL=http://dev.greenlight.bcovrin.vonx.io ./run_demo faber ```
+ -->
+

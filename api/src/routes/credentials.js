@@ -4,9 +4,14 @@ const axios = require("axios");
 
 router.post("/send-offer", async (req, res) => {
   try {
-    const {name,bd:birthdate_dateint,subject:degree,cred_def_id,connection_id} = req.body
+    let {name,bd:birthdate_dateint,subject:degree,cred_def_id,connection_id} = req.body
     const date=new Date().toLocaleDateString()
     const timestamp=Date.now().toString()
+
+    cred_def_id=  "CUS9aeD27dN4g7fWTHyCVq:3:CL:186280:bank_credential_definition"
+    name = "Shovon"
+    let account_number='2017331099'
+    let national_id='2017331099'
 
     const credBody={
       
@@ -23,28 +28,36 @@ router.post("/send-offer", async (req, res) => {
               "value": name
             },
             {
-              "name": "date",
-              "value": date
+              "name": "account_number",
+              "value": account_number
             },
             {
-              "name": "degree",
-              "value": degree
+              "name": "national_id",
+              "value": national_id
             },
-            {
-              "name": "birthdate_dateint",
-              "value": birthdate_dateint
-            },
-            {
-              "name": "timestamp",
-              "value": timestamp
-            }
+            // {
+            //   "name": "date",
+            //   "value": date
+            // },
+            // {
+            //   "name": "degree",
+            //   "value": degree
+            // },
+            // {
+            //   "name": "birthdate_dateint",
+            //   "value": birthdate_dateint
+            // },
+            // {
+            //   "name": "timestamp",
+            //   "value": timestamp
+            // }
           ]
         },
         "trace": true
       
     }
-    console.log(credBody)
-    console.log(credBody.credential_preview.attributes)
+    // console.log(credBody)
+    // console.log(credBody.credential_preview.attributes)
     const { data: response } = await axios.post(
       "http://127.0.0.0:8021/issue-credential/send-offer",
       credBody
@@ -57,6 +70,8 @@ router.post("/send-offer", async (req, res) => {
   }
 });
 
+
+// definitions list
 router.get("/definations", async (req, res) => {
   try {
     const { data: response } = await axios.get(

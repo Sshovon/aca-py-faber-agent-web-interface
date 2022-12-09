@@ -9,6 +9,7 @@ function ConnectionDetails({ d }) {
   const [showActions, setShowActions] = useState(false);
   const [connection_id,setConnectionID]=useState(d.connection_id);
   
+  
   return (
     <>
       <Card>

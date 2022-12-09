@@ -68,6 +68,6 @@ npm start
 
 
 # start aca-py 
-``` LEDGER_URL=http://dev.greenlight.bcovrin.vonx.io ./run_demo faber ```
+``` LEDGER_URL=http://dev.greenlight.bcovrin.vonx.io ./run_demo faber --aip 10```
  -->
 

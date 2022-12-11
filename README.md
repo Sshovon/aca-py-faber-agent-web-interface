@@ -19,15 +19,14 @@ You have to clone following repository and follow the other instructions in the 
 https://github.com/hyperledger/aries-mobile-agent-react-native.git
 ```
 
-
 ## Clone This Repository
 
 ```
 https://github.com/Sshovon/aca-py-faber-agent-web-interface.git
 ```
 
-## API
 
+## API
 Go to api directory and install the dependencies.
 
 ```

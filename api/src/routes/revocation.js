@@ -5,11 +5,9 @@ const axios = require("axios");
 router.post("/credential-record", async (req, res) => {
   try {
     const { rev_reg_id, cred_rev_id, connection_id } = req.body;
-    const definations = { rev_reg_id, cred_rev_id };
-
-    const { data: response } = await axios.post(
-      `http://localhost:8021/revocation/credential-record`,
-      definations
+    // const definations = { rev_reg_id, cred_rev_id };
+    const { data: response } = await axios.get(
+      `http://localhost:8021/revocation/credential-record?cred_rev_id=${cred_rev_id}&rev_reg_id=${rev_reg_id}`,
     );
 
     res.status(200).send({ ...response });

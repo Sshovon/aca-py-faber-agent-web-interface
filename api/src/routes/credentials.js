@@ -8,7 +8,7 @@ router.post("/send-offer", async (req, res) => {
     const date=new Date().toLocaleDateString()
     const timestamp=Date.now().toString()
 
-    cred_def_id= "CBZ9A2QLLgr2E1RfwECwUf:3:CL:186482:bank_credential_definition"
+    cred_def_id= "KgFTEMoLR8tdwrH1VtaHKv:3:CL:186498:bank_credential_definition"
     name = "Shovon"
     let account_number='2017331099'
     let national_id='2017331099'

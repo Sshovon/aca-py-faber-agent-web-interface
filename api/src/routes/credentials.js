@@ -8,7 +8,7 @@ router.post("/send-offer", async (req, res) => {
     const date=new Date().toLocaleDateString()
     const timestamp=Date.now().toString()
 
-    cred_def_id=  "CUS9aeD27dN4g7fWTHyCVq:3:CL:186280:bank_credential_definition"
+    cred_def_id= "CBZ9A2QLLgr2E1RfwECwUf:3:CL:186482:bank_credential_definition"
     name = "Shovon"
     let account_number='2017331099'
     let national_id='2017331099'
@@ -17,7 +17,7 @@ router.post("/send-offer", async (req, res) => {
       
         "auto_issue": true,
         "auto_remove": false,
-        "comment": "Offer on cred def id Q5TdsnLGd1w8gNauPenLny:3:CL:154741:faber.agent.degree_schema",
+        "comment": "Offer on cred def id CBZ9A2QLLgr2E1RfwECwUf:3:CL:186482:bank_credential_definition",
         "connection_id": connection_id,
         "cred_def_id": cred_def_id,
         "credential_preview": {
@@ -62,11 +62,13 @@ router.post("/send-offer", async (req, res) => {
       "http://127.0.0.0:8021/issue-credential/send-offer",
       credBody
     );
-    res.status(200).send({response});
+    
+    console.log(response)
+    res.status(200).send({...response});
   } catch (e) {
     const error = e.messsage;
     const statusCode = e.statusCode;
-    res.status(statusCode).send({ message: error });
+    res.status(500 || statusCode).send({ message: error });
   }
 });
 
@@ -81,7 +83,7 @@ router.get("/definations", async (req, res) => {
   } catch (e) {
     const error = e.messsage;
     const statusCode = e.statusCode;
-    res.status(statusCode).send({ message: error });
+    res.status(500 || statusCode).send({ message: error });
   }
 });
 module.exports = router;

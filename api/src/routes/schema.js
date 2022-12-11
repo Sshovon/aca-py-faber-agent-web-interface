@@ -8,7 +8,7 @@ router.get("/definition", async (req, res) => {
     const definition = {
       attributes: ["name", "account_number", "national_id"],
       schema_name: "bank_cred",
-      schema_version: "8.0",
+      schema_version: "1.0",
     };
     const { data: response } = await axios.post(
       `http://localhost:8021/schemas`,

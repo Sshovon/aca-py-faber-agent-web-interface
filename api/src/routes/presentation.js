@@ -6,6 +6,7 @@ router.post("/send-request", async (req, res) => {
   try {
     const { connection_id } = req.body;
     console.log(connection_id)
+    // aa14a4f9-25cc-4afe-9352-cd56eae3dfe1
     // const cred_def = {
     //   proof_request: {
     //     name: "Proof of Education",
@@ -53,24 +54,34 @@ router.post("/send-request", async (req, res) => {
     //   connection_id,
     // };
     const bank_cred_def = {
-      proof_request: {
-        name: "Proof of BANK Credential",
-        version: "1.0",
-        requested_attributes: {
+      "proof_request": {
+        "name": "Proof of BANK Credential",
+        "version": "1.0",
+        "requested_attributes": {
           "0_name_uuid": {
-            name: "account_number",
-            restrictions: [
+            "name": "name",
+            "restrictions": [
               {
-                schema_name: "bank_cred",
-              },
-            ],
+                "schema_name": "bank_cred"
+              }
+            ]
           },
+          "1_name_uuid": {
+            "name": "account_number",
+            "restrictions": [
+              {
+                "schema_name": "bank_cred"
+              }
+            ]
+          }
         },
         
-      },
-      trace: false,
-      connection_id,
-    };
+          "requested_predicates": {
+          }
+        },
+      "trace": false,
+      "connection_id":connection_id
+  };
 
 
     const { data: response } = await axios.post(
@@ -85,3 +96,26 @@ router.post("/send-request", async (req, res) => {
 });
 
 module.exports = router;
+
+
+
+// "0_account_number_uuid": {
+//   "name": "account_number",
+//   "p_type": ">=",
+//   "p_value": 2017331099,
+//   "restrictions": [
+//     {
+//       "schema_name": "bank_cred"
+//     }
+//   ]
+// },
+// "1_account_number_uuid": {
+//   "name": "account_number",
+//   "p_type": "<=",
+//   "p_value": 2017331099,
+//   "restrictions": [
+//     {
+//       "schema_name": "bank_cred"
+//     }
+//   ]
+// }

@@ -63,11 +63,19 @@ npm start
 
 ### now set 3001 port to webhook and 8020 to aca-py in agent.py and faber-local.sh in demo folder
 
+## set up tail server
+git clone https://github.com/bcgov/indy-tails-server.git
+
+./indy-tails-server/docker/manage up
+
+docker logs docker_ngrok-tails-server_1
+
+take ngrok url and set it in faber-local.sh and faber.py
 
 # start api and front-end
 
 
 # start aca-py 
-``` LEDGER_URL=http://dev.greenlight.bcovrin.vonx.io ./run_demo faber --aip 10```
+``` LEDGER_URL=http://dev.greenlight.bcovrin.vonx.io ./run_demo faber --aip 10 --revocation```
  -->
 

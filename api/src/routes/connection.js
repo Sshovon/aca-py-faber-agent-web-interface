@@ -12,8 +12,7 @@ router.get("/invitation", async (req, res) => {
     const invitationUrl = response.invitation_url;
     QRCode.toDataURL(invitationUrl, function (err, url) {
       res.status(200).send({
-        connection_id: response.connection_id,
-        invitation_url: invitationUrl,
+        ...response,
         qr: url,
       });
     });

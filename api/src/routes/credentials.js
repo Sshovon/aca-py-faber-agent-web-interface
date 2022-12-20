@@ -8,10 +8,10 @@ router.post("/send-offer", async (req, res) => {
     const date=new Date().toLocaleDateString()
     const timestamp=Date.now().toString()
 
-    cred_def_id= "KgFTEMoLR8tdwrH1VtaHKv:3:CL:186498:bank_credential_definition"
-    name = "Shovon"
-    let account_number='2017331099'
-    let national_id='2017331099'
+    cred_def_id= "JTDNiGYQb4mrYhZFausAcP:3:CL:186806:bank_credential_definition"
+    name = "Ishak"
+    let account_number='2017331065'
+    let national_id='2017331065'
 
     const credBody={
       
@@ -86,4 +86,6 @@ router.get("/definations", async (req, res) => {
     res.status(500 || statusCode).send({ message: error });
   }
 });
+
+
 module.exports = router;

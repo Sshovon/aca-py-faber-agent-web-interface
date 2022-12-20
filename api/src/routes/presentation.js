@@ -99,23 +99,3 @@ router.post("/send-request", async (req, res) => {
 
 module.exports = router;
 
-// "0_account_number_uuid": {
-//   "name": "account_number",
-//   "p_type": ">=",
-//   "p_value": 2017331099,
-//   "restrictions": [
-//     {
-//       "schema_name": "bank_cred"
-//     }
-//   ]
-// },
-// "1_account_number_uuid": {
-//   "name": "account_number",
-//   "p_type": "<=",
-//   "p_value": 2017331099,
-//   "restrictions": [
-//     {
-//       "schema_name": "bank_cred"
-//     }
-//   ]
-// }

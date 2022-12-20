@@ -1,0 +1,2 @@
+LEDGER_URL=http://test.bcovrin.vonx.io ./run_demo faber --aip 10 --revocation --events
+http://test.bcovrin.vonx.io/genesis
